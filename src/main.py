@@ -132,14 +132,27 @@ async def process_document(pdf_path: str, num_workers: int = 4):
     
     logger.success(f"Pipeline complete for {file_name}. Data saved to SQLite.")
 
-if __name__ == "__main__":
-    # For testing, we'll hardcode a dummy path for now. 
-    # Next phase we add the Typer CLI!
-    test_pdf = "sample.pdf" 
+import typer
+from rich.console import Console
+
+app = typer.Typer(help="DocuVision: Async VLM Document Extraction Pipeline")
+console = Console()
+
+@app.command()
+def ingest(
+    pdf_path: str = typer.Argument(..., help="Path to the PDF document"),
+    workers: int = typer.Option(4, "--workers", "-w", help="Number of concurrent VLM workers")
+):
+    """
+    Extracts pages from a PDF and processes them concurrently using a local Vision-Language Model.
+    """
+    console.print(f"[bold cyan]Starting DocuVision Pipeline[/bold cyan] for {pdf_path}")
+    console.print(f"[yellow]Concurrency Level:[/yellow] {workers} Workers")
     
-    # Create a dummy PDF if it doesn't exist just so the script runs without crashing
-    if not os.path.exists(test_pdf):
-        with open(test_pdf, "wb") as f:
-            f.write(b"%PDF-1.4\n%Dummy PDF for testing structure")
-            
-    asyncio.run(process_document(test_pdf))
+    # Run our async orchestrator
+    asyncio.run(process_document(pdf_path, num_workers=workers))
+    
+    console.print("[bold green]Pipeline execution completed![/bold green]")
+
+if __name__ == "__main__":
+    app()

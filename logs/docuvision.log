@@ -1,0 +1,248 @@
+2026-11-17 21:16:53.407 +05:30 | INFO     | src.db.database:init_db:8 - Initializing SQLite database connection...
+2026-11-17 21:16:53.419 +05:30 | INFO     | src.db.database:init_db:33 - Database initialized successfully with WAL mode.
+2026-11-17 21:16:53.419 +05:30 | INFO     | __main__:process_document:107 - Extracting pages from sample.pdf...
+2026-11-17 21:16:53.419 +05:30 | DEBUG    | src.utils.pdf_processor:extract_pdf_pages:53 - Offloading sample.pdf to thread pool...
+2026-11-17 21:16:53.421 +05:30 | DEBUG    | __main__:db_writer_worker:53 - Database Writer Worker started.
+2026-11-17 21:16:53.422 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-0 started.
+2026-11-17 21:16:53.422 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-1 started.
+2026-11-17 21:16:53.422 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-2 started.
+2026-11-17 21:16:53.422 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-3 started.
+2026-11-17 21:16:53.421 +05:30 | INFO     | src.utils.pdf_processor:_process_pdf_sync:12 - Starting PDF image extraction for: sample.pdf
+2026-11-17 21:16:53.944 +05:30 | INFO     | src.utils.pdf_processor:_process_pdf_sync:37 - Successfully processed 5 pages from sample.pdf
+2026-11-17 21:16:53.944 +05:30 | INFO     | __main__:process_document:115 - Pushed 5 pages to the processing queue.
+2026-11-17 21:16:53.945 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-0 processing sample.pdf - Page 1
+2026-11-17 21:16:53.945 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 1. Sending to VLM...
+2026-11-17 21:16:53.947 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-1 processing sample.pdf - Page 2
+2026-11-17 21:16:53.947 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 2. Sending to VLM...
+2026-11-17 21:16:53.949 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-2 processing sample.pdf - Page 3
+2026-11-17 21:16:53.949 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-3 processing sample.pdf - Page 4
+2026-11-17 21:16:53.963 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:16:53.964 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 3. Sending to VLM...
+2026-11-17 21:16:53.967 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:16:53.968 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 4. Sending to VLM...
+2026-11-17 21:16:53.977 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:16:53.979 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:16:55.966 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 1. Sending to VLM...
+2026-11-17 21:16:55.968 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 2. Sending to VLM...
+2026-11-17 21:16:55.980 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:16:55.981 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 3. Sending to VLM...
+2026-11-17 21:16:55.985 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:16:55.986 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 4. Sending to VLM...
+2026-11-17 21:16:56.002 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:16:56.003 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:16:57.983 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 1. Sending to VLM...
+2026-11-17 21:16:57.987 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 2. Sending to VLM...
+2026-11-17 21:16:57.999 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:16:57.999 +05:30 | ERROR    | __main__:vlm_worker:39 - Worker-0 failed on page 1: VLM returned status 404
+2026-11-17 21:16:57.999 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-0 processing sample.pdf - Page 5
+2026-11-17 21:16:58.000 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 5. Sending to VLM...
+2026-11-17 21:16:58.001 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:16:58.002 +05:30 | ERROR    | __main__:vlm_worker:39 - Worker-1 failed on page 2: VLM returned status 404
+2026-11-17 21:16:58.003 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 3. Sending to VLM...
+2026-11-17 21:16:58.010 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 1 to database.
+2026-11-17 21:16:58.012 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 2 to database.
+2026-11-17 21:16:58.014 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:16:58.015 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 4. Sending to VLM...
+2026-11-17 21:16:58.018 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:16:58.018 +05:30 | ERROR    | __main__:vlm_worker:39 - Worker-2 failed on page 3: VLM returned status 404
+2026-11-17 21:16:58.020 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 3 to database.
+2026-11-17 21:16:58.027 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:16:58.027 +05:30 | ERROR    | __main__:vlm_worker:39 - Worker-3 failed on page 4: VLM returned status 404
+2026-11-17 21:16:58.028 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 4 to database.
+2026-11-17 21:17:00.018 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 5. Sending to VLM...
+2026-11-17 21:17:00.028 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:17:02.030 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 5. Sending to VLM...
+2026-11-17 21:17:02.040 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:17:02.041 +05:30 | ERROR    | __main__:vlm_worker:39 - Worker-0 failed on page 5: VLM returned status 404
+2026-11-17 21:17:02.041 +05:30 | INFO     | __main__:process_document:119 - All images processed by VLM workers.
+2026-11-17 21:17:02.048 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 5 to database.
+2026-11-17 21:17:02.049 +05:30 | DEBUG    | __main__:db_writer_worker:78 - Database Writer Worker safely shut down.
+2026-11-17 21:17:02.050 +05:30 | SUCCESS  | __main__:process_document:133 - Pipeline complete for sample.pdf. Data saved to SQLite.
+2026-11-17 21:17:17.779 +05:30 | INFO     | src.db.database:init_db:8 - Initializing SQLite database connection...
+2026-11-17 21:17:17.781 +05:30 | INFO     | src.db.database:init_db:33 - Database initialized successfully with WAL mode.
+2026-11-17 21:17:17.782 +05:30 | INFO     | __main__:process_document:107 - Extracting pages from sample.pdf...
+2026-11-17 21:17:17.782 +05:30 | DEBUG    | src.utils.pdf_processor:extract_pdf_pages:53 - Offloading sample.pdf to thread pool...
+2026-11-17 21:17:17.783 +05:30 | INFO     | src.utils.pdf_processor:_process_pdf_sync:12 - Starting PDF image extraction for: sample.pdf
+2026-11-17 21:17:17.784 +05:30 | DEBUG    | __main__:db_writer_worker:53 - Database Writer Worker started.
+2026-11-17 21:17:17.817 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-0 started.
+2026-11-17 21:17:17.817 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-1 started.
+2026-11-17 21:17:17.817 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-2 started.
+2026-11-17 21:17:17.818 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-3 started.
+2026-11-17 21:17:18.308 +05:30 | INFO     | src.utils.pdf_processor:_process_pdf_sync:37 - Successfully processed 5 pages from sample.pdf
+2026-11-17 21:17:18.309 +05:30 | INFO     | __main__:process_document:115 - Pushed 5 pages to the processing queue.
+2026-11-17 21:17:18.309 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-0 processing sample.pdf - Page 1
+2026-11-17 21:17:18.309 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 1. Sending to VLM...
+2026-11-17 21:17:18.313 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-1 processing sample.pdf - Page 2
+2026-11-17 21:17:18.313 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 2. Sending to VLM...
+2026-11-17 21:17:18.315 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-2 processing sample.pdf - Page 3
+2026-11-17 21:17:18.316 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-3 processing sample.pdf - Page 4
+2026-11-17 21:17:18.325 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:17:18.325 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 3. Sending to VLM...
+2026-11-17 21:17:18.328 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:17:18.329 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 4. Sending to VLM...
+2026-11-17 21:17:18.339 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:17:18.340 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:17:20.328 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 1. Sending to VLM...
+2026-11-17 21:17:20.330 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 2. Sending to VLM...
+2026-11-17 21:17:20.340 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:17:20.340 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 3. Sending to VLM...
+2026-11-17 21:17:20.343 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:17:20.344 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 4. Sending to VLM...
+2026-11-17 21:17:20.354 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:17:20.358 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 21:17:21.357 +05:30 | DEBUG    | __main__:db_writer_worker:78 - Database Writer Worker safely shut down.
+2026-11-17 22:08:01.715 +05:30 | INFO     | src.db.database:init_db:8 - Initializing SQLite database connection...
+2026-11-17 22:08:01.717 +05:30 | INFO     | src.db.database:init_db:33 - Database initialized successfully with WAL mode.
+2026-11-17 22:08:01.717 +05:30 | INFO     | __main__:process_document:107 - Extracting pages from sample.pdf...
+2026-11-17 22:08:01.717 +05:30 | DEBUG    | src.utils.pdf_processor:extract_pdf_pages:53 - Offloading sample.pdf to thread pool...
+2026-11-17 22:08:01.718 +05:30 | DEBUG    | __main__:db_writer_worker:53 - Database Writer Worker started.
+2026-11-17 22:08:01.718 +05:30 | INFO     | src.utils.pdf_processor:_process_pdf_sync:12 - Starting PDF image extraction for: sample.pdf
+2026-11-17 22:08:01.844 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-0 started.
+2026-11-17 22:08:01.844 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-1 started.
+2026-11-17 22:08:01.844 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-2 started.
+2026-11-17 22:08:01.844 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-3 started.
+2026-11-17 22:08:02.248 +05:30 | INFO     | src.utils.pdf_processor:_process_pdf_sync:37 - Successfully processed 5 pages from sample.pdf
+2026-11-17 22:08:02.249 +05:30 | INFO     | __main__:process_document:115 - Pushed 5 pages to the processing queue.
+2026-11-17 22:08:02.249 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-0 processing sample.pdf - Page 1
+2026-11-17 22:08:02.249 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 1. Sending to VLM...
+2026-11-17 22:08:02.252 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-1 processing sample.pdf - Page 2
+2026-11-17 22:08:02.253 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 2. Sending to VLM...
+2026-11-17 22:08:02.255 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-2 processing sample.pdf - Page 3
+2026-11-17 22:08:02.255 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-3 processing sample.pdf - Page 4
+2026-11-17 22:08:02.266 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:08:02.267 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 3. Sending to VLM...
+2026-11-17 22:08:02.272 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:08:02.273 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 4. Sending to VLM...
+2026-11-17 22:08:02.278 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:08:02.287 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:08:04.269 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 1. Sending to VLM...
+2026-11-17 22:08:04.274 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 2. Sending to VLM...
+2026-11-17 22:08:04.280 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:08:04.280 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 3. Sending to VLM...
+2026-11-17 22:08:04.285 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:08:04.288 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 4. Sending to VLM...
+2026-11-17 22:08:04.293 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:08:04.299 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:08:06.282 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 1. Sending to VLM...
+2026-11-17 22:08:06.285 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 2. Sending to VLM...
+2026-11-17 22:08:06.295 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:08:06.296 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:08:06.296 +05:30 | ERROR    | __main__:vlm_worker:39 - Worker-1 failed on page 2: VLM returned status 404
+2026-11-17 22:08:06.296 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-1 processing sample.pdf - Page 5
+2026-11-17 22:08:06.296 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 3. Sending to VLM...
+2026-11-17 22:08:06.299 +05:30 | ERROR    | __main__:vlm_worker:39 - Worker-0 failed on page 1: VLM returned status 404
+2026-11-17 22:08:06.299 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 5. Sending to VLM...
+2026-11-17 22:08:06.310 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 2 to database.
+2026-11-17 22:08:06.312 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 1 to database.
+2026-11-17 22:08:06.313 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:08:06.314 +05:30 | ERROR    | __main__:vlm_worker:39 - Worker-2 failed on page 3: VLM returned status 404
+2026-11-17 22:08:06.314 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 4. Sending to VLM...
+2026-11-17 22:08:06.318 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:08:06.320 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 3 to database.
+2026-11-17 22:08:06.327 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:08:06.328 +05:30 | ERROR    | __main__:vlm_worker:39 - Worker-3 failed on page 4: VLM returned status 404
+2026-11-17 22:08:06.329 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 4 to database.
+2026-11-17 22:08:08.321 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 5. Sending to VLM...
+2026-11-17 22:08:08.332 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:08:10.333 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 5. Sending to VLM...
+2026-11-17 22:08:10.343 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:08:10.343 +05:30 | ERROR    | __main__:vlm_worker:39 - Worker-1 failed on page 5: VLM returned status 404
+2026-11-17 22:08:10.343 +05:30 | INFO     | __main__:process_document:119 - All images processed by VLM workers.
+2026-11-17 22:08:10.350 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 5 to database.
+2026-11-17 22:08:10.352 +05:30 | DEBUG    | __main__:db_writer_worker:78 - Database Writer Worker safely shut down.
+2026-11-17 22:08:10.352 +05:30 | SUCCESS  | __main__:process_document:133 - Pipeline complete for sample.pdf. Data saved to SQLite.
+2026-11-17 22:36:34.593 +05:30 | INFO     | src.db.database:init_db:8 - Initializing SQLite database connection...
+2026-11-17 22:36:34.607 +05:30 | INFO     | src.db.database:init_db:33 - Database initialized successfully with WAL mode.
+2026-11-17 22:36:34.607 +05:30 | INFO     | __main__:process_document:107 - Extracting pages from sample.pdf...
+2026-11-17 22:36:34.607 +05:30 | DEBUG    | src.utils.pdf_processor:extract_pdf_pages:53 - Offloading sample.pdf to thread pool...
+2026-11-17 22:36:34.608 +05:30 | DEBUG    | __main__:db_writer_worker:53 - Database Writer Worker started.
+2026-11-17 22:36:34.608 +05:30 | INFO     | src.utils.pdf_processor:_process_pdf_sync:12 - Starting PDF image extraction for: sample.pdf
+2026-11-17 22:36:34.733 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-0 started.
+2026-11-17 22:36:34.733 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-1 started.
+2026-11-17 22:36:34.733 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-2 started.
+2026-11-17 22:36:34.733 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-3 started.
+2026-11-17 22:36:35.133 +05:30 | INFO     | src.utils.pdf_processor:_process_pdf_sync:37 - Successfully processed 5 pages from sample.pdf
+2026-11-17 22:36:35.134 +05:30 | INFO     | __main__:process_document:115 - Pushed 5 pages to the processing queue.
+2026-11-17 22:36:35.134 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-0 processing sample.pdf - Page 1
+2026-11-17 22:36:35.134 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 1. Sending to VLM...
+2026-11-17 22:36:35.137 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-1 processing sample.pdf - Page 2
+2026-11-17 22:36:35.138 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 2. Sending to VLM...
+2026-11-17 22:36:35.140 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-2 processing sample.pdf - Page 3
+2026-11-17 22:36:35.140 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-3 processing sample.pdf - Page 4
+2026-11-17 22:36:35.150 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:36:35.150 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 3. Sending to VLM...
+2026-11-17 22:36:35.153 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:36:35.154 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 4. Sending to VLM...
+2026-11-17 22:36:35.166 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:36:35.166 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:36:37.153 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 1. Sending to VLM...
+2026-11-17 22:36:37.155 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 2. Sending to VLM...
+2026-11-17 22:36:37.170 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:36:37.171 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:36:37.171 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 4. Sending to VLM...
+2026-11-17 22:36:37.175 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 3. Sending to VLM...
+2026-11-17 22:36:37.189 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:36:37.192 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:36:39.173 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 1. Sending to VLM...
+2026-11-17 22:36:39.176 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 2. Sending to VLM...
+2026-11-17 22:36:39.186 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:36:39.187 +05:30 | ERROR    | __main__:vlm_worker:39 - Worker-0 failed on page 1: VLM returned status 404
+2026-11-17 22:36:39.187 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-0 processing sample.pdf - Page 5
+2026-11-17 22:36:39.188 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 5. Sending to VLM...
+2026-11-17 22:36:39.191 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:36:39.191 +05:30 | ERROR    | __main__:vlm_worker:39 - Worker-1 failed on page 2: VLM returned status 404
+2026-11-17 22:36:39.191 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 4. Sending to VLM...
+2026-11-17 22:36:39.204 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:36:39.204 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 3. Sending to VLM...
+2026-11-17 22:36:39.207 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 1 to database.
+2026-11-17 22:36:39.209 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 2 to database.
+2026-11-17 22:36:39.215 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:36:39.215 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:36:39.216 +05:30 | ERROR    | __main__:vlm_worker:39 - Worker-2 failed on page 3: VLM returned status 404
+2026-11-17 22:36:39.216 +05:30 | ERROR    | __main__:vlm_worker:39 - Worker-3 failed on page 4: VLM returned status 404
+2026-11-17 22:36:39.217 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 3 to database.
+2026-11-17 22:36:39.218 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 4 to database.
+2026-11-17 22:36:41.207 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 5. Sending to VLM...
+2026-11-17 22:36:41.218 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:36:43.220 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 5. Sending to VLM...
+2026-11-17 22:36:43.233 +05:30 | ERROR    | src.utils.vlm_client:process_image_with_vlm:55 - Ollama API Error: {"error":"model 'qwen2-vl:latest' not found"}
+2026-11-17 22:36:43.233 +05:30 | ERROR    | __main__:vlm_worker:39 - Worker-0 failed on page 5: VLM returned status 404
+2026-11-17 22:36:43.233 +05:30 | INFO     | __main__:process_document:119 - All images processed by VLM workers.
+2026-11-17 22:36:43.235 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 5 to database.
+2026-11-17 22:36:43.237 +05:30 | DEBUG    | __main__:db_writer_worker:78 - Database Writer Worker safely shut down.
+2026-11-17 22:36:43.237 +05:30 | SUCCESS  | __main__:process_document:133 - Pipeline complete for sample.pdf. Data saved to SQLite.
+2026-11-18 09:13:26.215 +05:30 | INFO     | src.db.database:init_db:8 - Initializing SQLite database connection...
+2026-11-18 09:13:26.224 +05:30 | INFO     | src.db.database:init_db:33 - Database initialized successfully with WAL mode.
+2026-11-18 09:13:26.225 +05:30 | INFO     | __main__:process_document:107 - Extracting pages from sample.pdf...
+2026-11-18 09:13:26.225 +05:30 | DEBUG    | src.utils.pdf_processor:extract_pdf_pages:53 - Offloading sample.pdf to thread pool...
+2026-11-18 09:13:26.226 +05:30 | INFO     | src.utils.pdf_processor:_process_pdf_sync:12 - Starting PDF image extraction for: sample.pdf
+2026-11-18 09:13:26.226 +05:30 | DEBUG    | __main__:db_writer_worker:53 - Database Writer Worker started.
+2026-11-18 09:13:26.317 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-0 started.
+2026-11-18 09:13:26.317 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-1 started.
+2026-11-18 09:13:26.318 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-2 started.
+2026-11-18 09:13:26.318 +05:30 | DEBUG    | __main__:vlm_worker:15 - VLM Worker-3 started.
+2026-11-18 09:13:26.765 +05:30 | INFO     | src.utils.pdf_processor:_process_pdf_sync:37 - Successfully processed 5 pages from sample.pdf
+2026-11-18 09:13:26.765 +05:30 | INFO     | __main__:process_document:115 - Pushed 5 pages to the processing queue.
+2026-11-18 09:13:26.766 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-0 processing sample.pdf - Page 1
+2026-11-18 09:13:26.766 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 1. Sending to VLM...
+2026-11-18 09:13:26.769 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-1 processing sample.pdf - Page 2
+2026-11-18 09:13:26.769 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 2. Sending to VLM...
+2026-11-18 09:13:26.771 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-2 processing sample.pdf - Page 3
+2026-11-18 09:13:26.771 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-3 processing sample.pdf - Page 4
+2026-11-18 09:13:38.184 +05:30 | INFO     | src.utils.vlm_client:process_image_with_vlm:66 - Page 1: Successfully extracted and validated data.
+2026-11-18 09:13:38.184 +05:30 | INFO     | __main__:vlm_worker:25 - Worker-0 processing sample.pdf - Page 5
+2026-11-18 09:13:38.185 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 3. Sending to VLM...
+2026-11-18 09:13:38.192 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 1 to database.
+2026-11-18 09:13:44.248 +05:30 | INFO     | src.utils.vlm_client:process_image_with_vlm:66 - Page 2: Successfully extracted and validated data.
+2026-11-18 09:13:44.248 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 4. Sending to VLM...
+2026-11-18 09:13:44.256 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 2 to database.
+2026-11-18 09:13:50.388 +05:30 | INFO     | src.utils.vlm_client:process_image_with_vlm:66 - Page 3: Successfully extracted and validated data.
+2026-11-18 09:13:50.389 +05:30 | DEBUG    | src.utils.vlm_client:process_image_with_vlm:39 - Acquired GPU semaphore for page 5. Sending to VLM...
+2026-11-18 09:13:50.398 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 3 to database.
+2026-11-18 09:13:56.500 +05:30 | INFO     | src.utils.vlm_client:process_image_with_vlm:66 - Page 4: Successfully extracted and validated data.
+2026-11-18 09:13:56.510 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 4 to database.
+2026-11-18 09:14:02.866 +05:30 | INFO     | src.utils.vlm_client:process_image_with_vlm:66 - Page 5: Successfully extracted and validated data.
+2026-11-18 09:14:02.867 +05:30 | INFO     | __main__:process_document:119 - All images processed by VLM workers.
+2026-11-18 09:14:02.873 +05:30 | DEBUG    | __main__:db_writer_worker:73 - Saved sample.pdf page 5 to database.
+2026-11-18 09:14:02.876 +05:30 | DEBUG    | __main__:db_writer_worker:78 - Database Writer Worker safely shut down.
+2026-11-18 09:14:02.876 +05:30 | SUCCESS  | __main__:process_document:133 - Pipeline complete for sample.pdf. Data saved to SQLite.

@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  # The AI Engine
+  ollama:
+    image: ollama/ollama:latest
+    container_name: docuvision_ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    # If you have an NVIDIA GPU, uncomment the deploy block below to enable GPU acceleration in Docker
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+  # Our Pipeline Application
+  docuvision:
+    build: .
+    container_name: docuvision_app
+    depends_on:
+      - ollama
+    environment:
+      # Tell our app to talk to the Docker container, not localhost
+      - OLLAMA_URL=http://ollama:11434/api/generate
+    volumes:
+      # Mount the local folder so the app can read your PDFs and save the DB locally
+      - .:/app
+    # We use a sleep command so the container stays alive, allowing us to exec into it or run commands ad-hoc
+    command: tail -f /dev/null 
+
+volumes:
+  ollama_data:

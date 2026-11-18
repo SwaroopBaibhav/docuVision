@@ -6,7 +6,7 @@ from src.utils.schemas import ExtractedData
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
 # Assuming you have pulled this. You can swap to llava or minicpm-v
-MODEL_NAME = "qwen2-vl:latest" 
+MODEL_NAME = "qwen2.5vl:latest" 
 
 # The Semaphore: The true hero of backend AI.
 # This ensures we NEVER send more than 2 images to the GPU at the exact same time.
